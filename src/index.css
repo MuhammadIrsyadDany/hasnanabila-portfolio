@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-blue: #38BDF8;
+    --light-blue: #7DD3FC;
+    --soft-blue: #BAE6FD;
+    --very-light-blue: #E0F2FE;
+    --background: #F8FCFF;
+    --dark-text: #0F172A;
+    --secondary-text: #475569;
+    --white: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--dark-text);
+    background-color: var(--background);
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F0F9FF;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #BAE6FD;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7DD3FC;
+  }
+}
+
+/* Glassmorphism and specialized utilities */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(186, 230, 253, 0.45);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(186, 230, 253, 0.6);
+  box-shadow: 0 4px 20px -2px rgba(56, 189, 248, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(125, 211, 252, 0.8);
+  box-shadow: 0 10px 30px -4px rgba(56, 189, 248, 0.16), 0 4px 12px -2px rgba(56, 189, 248, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Engineering subtle grid background */
+.engineering-grid {
+  background-image: 
+    radial-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(186, 230, 253, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(186, 230, 253, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+}
+
+/* Subtle floating badge keyframe */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-soft-float {
+  animation: softFloat 4s ease-in-out infinite;
+}
+
+.animate-soft-float-delayed {
+  animation: softFloat 4.5s ease-in-out infinite 1.5s;
+}
+
+/* Pulse glow for status dots */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(56, 189, 248, 0);
+  }
+}
+
+.glow-indicator {
+  animation: glowPulse 2.5s infinite;
+}
