@@ -10,8 +10,12 @@ import Training from './components/Training';
 import Achievement from './components/Achievement';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { useScrollReveal } from './hooks/useScrollReveal';
 
 export default function App() {
+  // Initialize lightweight IntersectionObserver scroll reveal
+  useScrollReveal();
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F8FCFF] text-[#0F172A] selection:bg-[#BAE6FD] selection:text-[#0F172A]">
       {/* Sticky Top Navigation */}
