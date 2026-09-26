@@ -8,60 +8,62 @@ import {
   CheckCircle2, 
   Binary, 
   SlidersHorizontal,
-  Compass
+  Compass,
+  Radio
 } from 'lucide-react';
 
 export default function Achievement() {
   const { achievement } = portfolioData;
 
   return (
-    <section id="achievement" className="py-14 sm:py-16 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="achievement" className="py-14 sm:py-16 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div data-reveal className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E0F2FE] border border-[#BAE6FD] text-[#0369A1] font-bold text-xs uppercase tracking-wider mb-2.5">
+        <div data-reveal className="text-center max-w-2xl mx-auto mb-14">
+          <div className="section-badge mb-3">
             <Trophy className="w-3.5 h-3.5 text-[#0284C7]" />
-            <span>Featured Achievement</span>
+            <span>Featured Capstone</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-            Final Project – Electrical Engineering
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
+            Final Project – <span className="gradient-text">Electrical Engineering</span>
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#475569]">
+          <p className="mt-3 text-sm sm:text-base text-[#475569] max-w-xl mx-auto">
             Riset dan realisasi konverter daya AC-DC terkontrol SPWaM satu fasa berbasis modulasi gelombang gergaji.
           </p>
-          <div className="w-14 h-1 bg-gradient-to-r from-[#38BDF8] to-[#60A5FA] mx-auto mt-3 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#38BDF8] via-[#0284C7] to-[#818CF8] mx-auto mt-4 rounded-full"></div>
         </div>
 
-        {/* Featured Project Big Showcase Card - High-tech Aesthetic */}
+        {/* Featured Project Big Showcase Card - Liquid Glass Dark Mode */}
         <div data-reveal data-delay="1" className="max-w-5xl mx-auto">
-          <div className="glass-card rounded-3xl p-5 sm:p-8 lg:p-10 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0A1120] text-white border border-[#38BDF8]/40 shadow-2xl relative overflow-hidden group">
+          <div className="liquid-glass-dark rounded-3xl p-6 sm:p-8 lg:p-10 text-white relative group">
             
             {/* Background Engineering Schematic Circuit Lines */}
-            <div className="absolute inset-0 pointer-events-none opacity-20 engineering-grid-dark"></div>
+            <div className="absolute inset-0 pointer-events-none opacity-25 engineering-grid-dark"></div>
             
-            {/* Ambient Cyan Glow */}
-            <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#38BDF8]/20 rounded-full blur-3xl pointer-events-none"></div>
-            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-[#0284C7]/20 rounded-full blur-3xl pointer-events-none"></div>
+            {/* Ambient Iridescent Liquid Orbs */}
+            <div className="absolute -top-24 -right-24 w-80 h-80 bg-sky-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="relative z-10">
               
               {/* Top Meta Badges */}
               <div className="flex flex-wrap items-center justify-between gap-2.5 mb-5">
                 <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#0284C7] text-white text-[11px] font-extrabold shadow-sm">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-[#0284C7] to-[#0EA5E9] text-white text-[11px] font-extrabold shadow-sm border border-white/20">
                     <Sparkles className="w-3 h-3 text-[#7DD3FC]" />
                     <span>Graduation Capstone 2026</span>
                   </span>
-                  <span className="text-[11px] font-bold text-[#7DD3FC] bg-[#0284C7]/30 px-2.5 py-1 rounded-full border border-[#38BDF8]/40">
+                  <span className="text-[11px] font-bold text-[#7DD3FC] bg-sky-950/60 px-3 py-1 rounded-full border border-sky-400/30 backdrop-blur-md">
                     PENS D4 TEI
                   </span>
                 </div>
 
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#38BDF8]">
-                  <Activity className="w-3.5 h-3.5 text-[#38BDF8] animate-pulse" />
+                <div className="inline-flex items-center gap-2 text-xs font-bold text-[#38BDF8] bg-sky-950/50 px-3 py-1 rounded-full border border-sky-500/30">
+                  <span className="w-2 h-2 rounded-full bg-[#38BDF8] glow-indicator"></span>
+                  <Activity className="w-3.5 h-3.5 text-[#38BDF8]" />
                   <span>Hardware & Simulation Validated</span>
-                </span>
+                </div>
               </div>
 
               {/* Title of Final Project */}
@@ -75,38 +77,46 @@ export default function Achievement() {
               </p>
 
               {/* Visual Engineering Graphic: Oscilloscope Waveform & Modulation Visual */}
-              <div className="mb-6 bg-[#020617]/90 rounded-2xl border border-[#38BDF8]/30 p-4 shadow-inner">
-                <div className="flex items-center justify-between mb-2 text-xs">
-                  <div className="flex items-center gap-1.5 text-[#38BDF8] font-bold">
-                    <SlidersHorizontal className="w-3.5 h-3.5" />
-                    <span>Visualisasi Modulasi SPWaM & Gelombang Gergaji (Oscilloscope Mode)</span>
+              <div className="mb-6 bg-[#040814]/90 rounded-2xl border border-sky-500/30 p-4 shadow-2xl relative overflow-hidden">
+                
+                {/* Oscilloscope Header / Controls Bar */}
+                <div className="flex items-center justify-between mb-2.5 text-xs pb-2 border-b border-slate-800">
+                  <div className="flex items-center gap-2 text-[#38BDF8] font-bold">
+                    <Radio className="w-3.5 h-3.5 text-[#38BDF8] animate-pulse" />
+                    <span>Digital Oscilloscope DSO-5000 (Real-Time Waveform Monitor)</span>
                   </div>
-                  <span className="hidden sm:inline text-slate-400 font-mono text-[10px]">
-                    f(t) = Sawtooth vs Modulating Signal
-                  </span>
+                  <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400">
+                    <span className="text-emerald-400 font-bold bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/40">CH1 50Hz</span>
+                    <span className="text-sky-300 font-bold bg-sky-950/60 px-2 py-0.5 rounded border border-sky-500/40">PWM: SPWaM</span>
+                    <span className="hidden sm:inline text-slate-400">TRIG: AUTO</span>
+                  </div>
                 </div>
 
-                {/* Subtle SVG Waveform Diagram */}
-                <div className="w-full h-24 sm:h-28 bg-[#090D16] rounded-xl relative overflow-hidden flex items-center justify-center p-2 border border-slate-800">
+                {/* Oscilloscope CRT / Screen with Scanline and Animated Waveforms */}
+                <div className="w-full h-28 sm:h-32 bg-[#02050D] rounded-xl relative overflow-hidden flex items-center justify-center p-2 border border-sky-900/60">
+                  
+                  {/* Glowing Laser Scanline passing through */}
+                  <div className="absolute inset-x-0 h-10 bg-gradient-to-b from-transparent via-[#38BDF8]/15 to-transparent oscilloscope-scanline pointer-events-none z-10" />
+
                   <svg
                     viewBox="0 0 600 100"
                     preserveAspectRatio="none"
-                    className="w-full h-full"
+                    className="w-full h-full relative z-0"
                   >
                     {/* Grid lines inside oscilloscope view */}
                     <defs>
-                      <pattern id="scopeGrid2" width="30" height="20" patternUnits="userSpaceOnUse">
-                        <path d="M 30 0 L 0 0 0 20" fill="none" stroke="#1E293B" strokeWidth="0.8" />
+                      <pattern id="scopeGrid3" width="30" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 30 0 L 0 0 0 20" fill="none" stroke="#162235" strokeWidth="0.8" />
                       </pattern>
-                      <linearGradient id="waveGlow2" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <linearGradient id="waveGlow3" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#38BDF8" />
                         <stop offset="50%" stopColor="#7DD3FC" />
-                        <stop offset="100%" stopColor="#60A5FA" />
+                        <stop offset="100%" stopColor="#818CF8" />
                       </linearGradient>
                     </defs>
-                    <rect width="600" height="100" fill="url(#scopeGrid2)" />
+                    <rect width="600" height="100" fill="url(#scopeGrid3)" />
 
-                    {/* Sawtooth carrier waveform */}
+                    {/* Sawtooth carrier waveform - Animated trace */}
                     <path
                       d="
                         M 0 80 L 40 20 L 40 80 
@@ -128,11 +138,11 @@ export default function Achievement() {
                       fill="none"
                       stroke="#0284C7"
                       strokeWidth="1.2"
-                      strokeDasharray="2 2"
-                      opacity="0.5"
+                      className="animate-osci-trace"
+                      opacity="0.6"
                     />
 
-                    {/* Reference envelope */}
+                    {/* Reference Sine Envelope (Pink/Rose) */}
                     <path
                       d="
                         M 0 50 
@@ -142,12 +152,12 @@ export default function Achievement() {
                         T 600 50
                       "
                       fill="none"
-                      stroke="#F43F5E"
+                      stroke="#FB7185"
                       strokeWidth="1.5"
-                      opacity="0.6"
+                      opacity="0.65"
                     />
 
-                    {/* Stepped SPWaM output pulses */}
+                    {/* Stepped SPWaM output pulses (Glow Neon Cyan) */}
                     <path
                       d="
                         M 0 80 
@@ -168,13 +178,13 @@ export default function Achievement() {
                         H 600 80
                       "
                       fill="none"
-                      stroke="url(#waveGlow2)"
+                      stroke="url(#waveGlow3)"
                       strokeWidth="2.5"
                     />
                   </svg>
                   
-                  {/* Legend overlay */}
-                  <div className="absolute bottom-1 right-2 flex items-center gap-3 text-[10px] text-slate-300 font-mono">
+                  {/* Legend overlay inside scope */}
+                  <div className="absolute bottom-1 right-2 flex items-center gap-3 text-[10px] text-slate-300 font-mono z-20">
                     <span className="flex items-center gap-1">
                       <span className="w-2.5 h-0.5 bg-[#0284C7] inline-block"></span> Sawtooth
                     </span>
@@ -185,14 +195,14 @@ export default function Achievement() {
                 </div>
               </div>
 
-              {/* Research Scope 4 Cards */}
+              {/* Research Scope 4 Cards - Frosted Dark Glass */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                 {achievement.scope.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/70 hover:border-[#38BDF8]/60 transition-colors flex items-start gap-2.5"
+                    className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-sky-400/50 backdrop-blur-md transition-all duration-300 flex items-start gap-2.5"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-[#0284C7]/30 text-[#38BDF8] flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                    <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-[#0284C7] to-[#38BDF8] text-white flex items-center justify-center font-bold flex-shrink-0 mt-0.5 shadow-sm">
                       {idx === 0 && <Compass className="w-3.5 h-3.5" />}
                       {idx === 1 && <Cpu className="w-3.5 h-3.5" />}
                       {idx === 2 && <Binary className="w-3.5 h-3.5" />}
@@ -216,14 +226,14 @@ export default function Achievement() {
                   {achievement.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-800 text-[#7DD3FC] border border-slate-700"
+                      className="text-xs font-semibold px-3 py-1 rounded-full bg-white/[0.06] text-[#7DD3FC] border border-white/10 backdrop-blur-sm"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-1 text-xs text-[#38BDF8] font-bold">
+                <div className="flex items-center gap-1.5 text-xs text-[#38BDF8] font-bold">
                   <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
                   <span>Sidang & Evaluasi Diselesaikan</span>
                 </div>

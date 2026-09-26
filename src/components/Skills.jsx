@@ -23,22 +23,22 @@ export default function Skills() {
   const { skillCategories } = portfolioData;
 
   return (
-    <section id="skills" className="py-14 sm:py-16 bg-[#F8FCFF] relative engineering-grid">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-16 sm:py-20 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div data-reveal className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E0F2FE] border border-[#BAE6FD] text-[#0369A1] font-bold text-xs uppercase tracking-wider mb-2.5">
+        <div data-reveal className="text-center max-w-2xl mx-auto mb-14">
+          <div className="section-badge mb-3">
             <Sliders className="w-3.5 h-3.5 text-[#0284C7]" />
             <span>Technical & Professional Capabilities</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-            Skills & Competencies
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
+            Skills & <span className="gradient-text">Competencies</span>
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#475569]">
-            Keahlian teknik elektro, software rekayasa, tools produktivitas, serta kemampuan interpersonal.
+          <p className="mt-3 text-sm sm:text-base text-[#475569] max-w-xl mx-auto">
+            Kombinasi keahlian teknik elektro industri, software perancangan & komputasi, serta kapabilitas interpersonal profesional.
           </p>
-          <div className="w-14 h-1 bg-gradient-to-r from-[#38BDF8] to-[#60A5FA] mx-auto mt-3 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#38BDF8] via-[#0284C7] to-[#818CF8] mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* Skills Grid */}
@@ -52,59 +52,61 @@ export default function Skills() {
                 key={idx}
                 data-reveal
                 data-delay={(idx % 3) + 1}
-                className={`glass-card rounded-2xl p-5 sm:p-6 bg-white border transition-all duration-300 flex flex-col justify-between ${
+                className={`liquid-glass rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 ${
                   isFeatured 
-                    ? 'border-[#7DD3FC] shadow-soft-lg md:col-span-2 lg:col-span-2 bg-gradient-to-br from-white via-white to-[#F0F9FF]' 
-                    : 'border-[#BAE6FD]/80 shadow-soft'
+                    ? 'md:col-span-2 lg:col-span-2 border-sky-300 shadow-xl shadow-sky-500/10' 
+                    : ''
                 }`}
               >
                 <div>
                   {/* Category Header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 rounded-xl bg-[#E0F2FE] text-[#0284C7] flex items-center justify-center font-bold shadow-sm">
-                        <IconComponent className="w-4 h-4" />
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#0284C7] to-[#38BDF8] text-white flex items-center justify-center font-bold shadow-sm">
+                        <IconComponent className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className="text-base font-extrabold text-[#0F172A]">
+                        <h3 className="text-base sm:text-lg font-extrabold text-[#0F172A]">
                           {category.title}
                         </h3>
-                        <span className="text-[10px] font-semibold text-[#64748B]">
-                          {category.skills.length} verified competencies
+                        <span className="text-[11px] font-semibold text-[#64748B]">
+                          {category.skills.length} kompetensi terverifikasi
                         </span>
                       </div>
                     </div>
                     {isFeatured && (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-[#0369A1] bg-[#BAE6FD]/50 px-2 py-0.5 rounded-full border border-[#7DD3FC]">
-                        <Sparkles className="w-3 h-3 text-[#0284C7]" />
+                      <span className="liquid-pill inline-flex items-center gap-1.5 text-[11px] font-bold text-[#0369A1] px-3 py-1 rounded-full border border-sky-200">
+                        <Sparkles className="w-3.5 h-3.5 text-[#0284C7]" />
                         <span>Core Field</span>
                       </span>
                     )}
                   </div>
 
-                  {/* Skills Chips */}
-                  <div className="flex flex-wrap gap-1.5 pt-1">
+                  {/* Skills Chips - Liquid Pills */}
+                  <div className="flex flex-wrap gap-2 pt-1">
                     {category.skills.map((skill, sIdx) => (
                       <div
                         key={sIdx}
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 hover:-translate-y-0.5 ${
+                        className={`liquid-pill inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-semibold cursor-default transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 ${
                           isFeatured
-                            ? 'bg-[#F0F9FF] hover:bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD]'
-                            : 'bg-[#F8FCFF] hover:bg-[#E0F2FE] text-[#334155] border border-[#BAE6FD]/70'
+                            ? 'text-[#0284C7] font-bold bg-white/90 shadow-sm'
+                            : 'text-[#334155]'
                         }`}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]"></span>
+                        <span className="w-2 h-2 rounded-full bg-gradient-to-tr from-[#0284C7] to-[#38BDF8]"></span>
                         <span>{skill}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Subtle bottom note */}
-                <div className="mt-5 pt-3 border-t border-[#E0F2FE] flex items-center justify-between text-[10px] text-[#64748B]">
-                  <span>Verified via Academic & Field Practice</span>
-                  <Check className="w-3 h-3 text-[#0284C7]" />
-                </div>
+                {/* Bottom subtle accent line for featured card */}
+                {isFeatured && (
+                  <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs text-[#64748B]">
+                    <span className="font-medium text-[11px]">Bidang utama dalam perawatan sistem tenaga & kontrol otomatis</span>
+                    <span className="text-[11px] font-bold text-[#0284C7]">PENS • 2026</span>
+                  </div>
+                )}
               </div>
             );
           })}

@@ -50,6 +50,11 @@ export const portfolioData = {
         "Troubleshooting",
         "RTD Calibration Analysis",
       ],
+      photos: [
+        { src: "/magang/pln/pln-1.jpeg", alt: "Kegiatan magang di PT. PLN Nusantara Power - Foto 1" },
+        { src: "/magang/pln/pln-2.jpeg", alt: "Kegiatan magang di PT. PLN Nusantara Power - Foto 2" },
+        { src: "/magang/pln/pln-3.jpeg", alt: "Kegiatan magang di PT. PLN Nusantara Power - Foto 3" },
+      ],
     },
     {
       id: "sbi",
@@ -69,6 +74,11 @@ export const portfolioData = {
         "Sensor & Proportional Gate",
         "VSD Parameter Setting",
         "Energy Saving Analysis",
+      ],
+      photos: [
+        { src: "/magang/sbi/sbi-1.jpeg", alt: "Kegiatan magang di PT. Solusi Bangun Indonesia - Foto 1" },
+        { src: "/magang/sbi/sbi-2.jpeg", alt: "Kegiatan magang di PT. Solusi Bangun Indonesia - Foto 2" },
+        { src: "/magang/sbi/sbi-3.jpeg", alt: "Kegiatan magang di PT. Solusi Bangun Indonesia - Foto 3" },
       ],
     },
   ],
